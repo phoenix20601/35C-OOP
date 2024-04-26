@@ -1,5 +1,8 @@
 import java.util.Scanner;
 public class Task3{
+    /**
+     * @param args
+     */
     public static void main(String[] args){
         /*Write a JAVA program to find the maximum between three numbers. */
         // int a= 10,b=20,c=30;
@@ -133,134 +136,113 @@ public class Task3{
 
         /* Create a Java program that takes two numbers and an operator (+, -, *, /) as 
         inputs and performs the corresponding arithmetic operation using a switch case statement.*/
-        // Scanner op = new Scanner(System.in);
+        Scanner op = new Scanner(System.in);
         
-        // // Input first number
-        // System.out.print("Enter the first number: ");
-        // double num1 = op.nextDouble();
+        System.out.println("Enter the first number:");
+        double num1 = op.nextDouble();
+        System.out.println("Enter the second number:");
+        double num2 = op.nextDouble();
+        System.out.println("Enter operator(+,-,*,/)");
+        char operator = op.next().charAt(0);
+
+        switch (operator) {
+            case '+':
+                double result = num1+num2;
+                System.err.println("Addition:" +result);
+                break;
+            case '-':
+                double result1 = num1-num2;
+                System.out.println("Subtraction:" +result1);
+                break;
+            case '*':
+                double result2 = num1*num2;
+                System.out.println("Multiplication:" +result2);
+                break;
+            case '/':
+                double result3 = num1/num2;
+                System.out.println("Division:" +result3);
+                break;
+            default:
+                System.out.println("Invalid operator.");                
+                break;
+        }
         
-        // // Input operator
-        // System.out.print("Enter the operator (+, -, *, /): ");
-        // char operator = op.next().charAt(0);
-        
-        // // Input second number
-        // System.out.print("Enter the second number: ");
-        // double num2 = op.nextDouble();
-        
-        // double result;
-        
-        // // Perform arithmetic operation based on the operator
-        // switch(operator) {
-        //     case '+':
-        //         result = num1 + num2;
-        //         break;
-        //     case '-':
-        //         result = num1 - num2;
-        //         break;
-        //     case '*':
-        //         result = num1 * num2;
-        //         break;
-        //     case '/':
-        //         if (num2 != 0) {
-        //             result = num1 / num2;
-        //         } else {
-        //             System.out.println("Error: Division by zero.");
-        //             return; // Exit the program if division by zero is attempted
-        //         }
-        //         break;
-        //     default:
-        //         System.out.println("Invalid operator entered.");
-        //         return; // Exit the program if an invalid operator is entered
-        // }
-        
-        // System.out.println("Result: " + result);
-        
-        // op.close();
+        op.close();
 
 
         /*Write a Java program that takes an integer input (1 to 12) representing a month and 
         prints the corresponding season (e.g., 1-3: Winter, 4-6: Spring, 7-9: Summer, 10-12: Fall) using a switch case. */
 
-        // Scanner ritu = new Scanner(System.in);
-        // System.out.print("Enter a month (1 to 12): ");
-        // int month = ritu.nextInt();
-        
-        // String season;
-        // switch (month) {
-        //     case 1:
-        //     case 2:
-        //     case 3:
-        //         season = "Winter";
-        //         break;
-        //     case 4:
-        //     case 5:
-        //     case 6:
-        //         season = "Spring";
-        //         break;
-        //     case 7:
-        //     case 8:
-        //     case 9:
-        //         season = "Summer";
-        //         break;
-        //     case 10:
-        //     case 11:
-        //     case 12:
-        //         season = "Fall";
-        //         break;
-        //     default:
-        //         season = "Invalid month";
-        // }
-        
-        // System.out.println("The season for month " + month + " is: " + season);
+        Scanner ritu = new Scanner(System.in);
+        System.out.println("Enter a month (1 to 12):");
+        int month = ritu.nextInt();
 
-        // ritu.close();
+        switch (month) {
+            case 1,2,3:
+                System.out.println("Winter Season.");
+                break;
+            case 4,5,6:
+                System.out.println("Spring Season");
+                break;
+            case 7,8,9:
+                System.out.println("Summer Season");
+                break;
+            case 10,11,12:
+                System.out.println("Fall Season");
+                break;
+            default:
+                System.out.println("Invalid Month");
+                break;
+        }
+
+        ritu.close();
 
         /*Implement a Java program that calculates the area of different shapes 
         (circle, rectangle, square, triangle)
          based on the user's choice using a switch case. */
-        // Scanner geometry = new Scanner(System.in);
-        // System.out.println("Shape Area Calculator");
-        // System.out.println("1. Circle");
-        // System.out.println("2. Rectangle");
-        // System.out.println("3. Square");
-        // System.out.println("4. Triangle");
-        // System.out.print("Enter your choice (1-4): ");
-        // int choice = geometry.nextInt();
+        Scanner geometry = new Scanner(System.in);
+        System.out.println("Shape Area Calculator");
+        System.out.println("1. Circle");
+        System.out.println("2. Rectangle");
+        System.out.println("3. Square");
+        System.out.println("4. Triangle");
+        System.out.print("Enter your shape: ");
+        int shape = geometry.nextInt();
 
-        // double area = 0;
+        double area = 0;
 
-        // switch (choice) {
-        //     case 1: // Circle
-        //         System.out.print("Enter the radius of the circle: ");
-        //         double radius = geometry.nextDouble();
-        //         area = Math.PI * radius * radius;
-        //         break;
-        //     case 2: // Rectangle
-        //         System.out.print("Enter the length of the rectangle: ");
-        //         double length = geometry.nextDouble();
-        //         System.out.print("Enter the width of the rectangle: ");
-        //         double width = geometry.nextDouble();
-        //         area = length * width;
-        //         break;
-        //     case 3: // Square
-        //         System.out.print("Enter the side length of the square: ");
-        //         double side = geometry.nextDouble();
-        //         area = side * side;
-        //         break;
-        //     case 4: // Triangle
-        //         System.out.print("Enter the base length of the triangle: ");
-        //         double base = geometry.nextDouble();
-        //         System.out.print("Enter the height of the triangle: ");
-        //         double height = geometry.nextDouble();
-        //         area = 0.5 * base * height;
-        //         break;
-        //     default:
-        //         System.out.println("Invalid choice!");
-        // }
+        switch (shape) {
+            case 1: // Circle
+                System.out.print("Enter the radius of the circle: ");
+                double radius = geometry.nextDouble();
+                area = 3.14 * radius * radius;
+                break;
+            case 2: // Rectangle
+                System.out.print("Enter the length of the rectangle: ");
+                double length = geometry.nextDouble();
+                System.out.print("Enter the width of the rectangle: ");
+                double breadth = geometry.nextDouble();
+                area = length * breadth;
+                break;
+            case 3: // Square
+                System.out.print("Enter the side length of the square: ");
+                double side = geometry.nextDouble();
+                area = side * side;
+                break;
+            case 4: // Triangle
+                System.out.print("Enter the base length of the triangle: ");
+                double base = geometry.nextDouble();
+                System.out.print("Enter the height of the triangle: ");
+                double height = geometry.nextDouble();
+                area = 0.5 * base * height;
+                break;
+            default:
+                System.out.println("Invalid choice!");
+        }
 
-        // System.out.println("The area of the shape is: " + area);
+        System.out.println("The area of the shape is: " + area + "sq.cm");
 
-        // geometry.close();
+        geometry.close();
 
     }
 }
